@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>FreeCodeCamp - API Projects - File Metadata Microservice</title>
+    <meta name="description" content="FreeCodeCamp - API Projects - File Metadata Microservice">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link id="favicon" rel="icon" type="image/x-icon" href="favicon.ico">
+  </head>
+  <body>
+    <h1>API Basejump: File Metadata Microservice</h1>
+    <h3>Max file size allowed is 1MB.</h3>
+    <form action="result" method="post" enctype="multipart/form-data">
+      <div class="wrapper-form">
+        <input id="file" name="file" type="file" onchange="changeFileText(event)"/>
+        <label id="label-file" for="file">
+          <img src="https://storage.googleapis.com/material-icons/external-assets/v4/icons/svg/ic_file_upload_white_24px.svg"/>
+          <span>Choose a file ...</span>
+        </label>
+        <input id="submit" type="submit" value="Send File" disabled/>
+        <label id="label-submit" class="inactive" for="submit">
+          <img src="https://storage.googleapis.com/material-icons/external-assets/v4/icons/svg/ic_send_white_24px.svg"/>
+        </label>
+      </div>
+    </form>
+    
+    <script>
+      let label = document.getElementById('label-file').children[1];
+      let submit = document.getElementById('submit');
+      let labelSubmit = document.getElementById('label-submit');
+
+      function changeFileText(event) {
+        let filename = event.target.value.split('\\').pop();
+        label.innerText = filename;
+        submit.disabled = false;
+        labelSubmit.classList.remove('inactive');
+      }
+    </script>
+  </body>
+</html>
