@@ -85,3 +85,31 @@ let server = http.createServer((req, res) => {
 let listener = server.listen(process.env.PORT, () => {
   console.log('Your app is listening on port ' + listener.address().port);
 });
+
+/*
+** Attempt to remove Formidable package dependency
+** Manually writing file not working - wrong file size
+
+let body = '';
+let fileName = null;
+req.on('data', data => {
+  body += data;
+});
+req.on('end', () => {
+  fileName = /;\sfilename=".*"/.exec(body);
+  fileName = fileName[0].slice(12, (fileName[0].length - 1));
+  fs.writeFile(`./upload/${fileName}`, body, 'binary', err => {
+    if(err) { console.log(err); throw err; }
+    else {
+       fs.stat(`./upload/${fileName}`, (err, stats) => {
+         if(err) { console.log(err); throw err; }
+         else {
+           console.log(stats);
+           fs.unlink(`./upload/${fileName}`);
+         }
+       });
+    }
+  });
+  res.end();
+});
+*/
