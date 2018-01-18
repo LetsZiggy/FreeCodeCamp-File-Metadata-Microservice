@@ -94,9 +94,11 @@ let listener = server.listen(process.env.PORT, () => {
 
 let body = '';
 let fileName = null;
+
 req.on('data', data => {
   body += data;
 });
+
 req.on('end', () => {
   fileName = /;\sfilename=".*"/.exec(body);
   fileName = fileName[0].slice(12, (fileName[0].length - 1));
@@ -112,6 +114,7 @@ req.on('end', () => {
        });
     }
   });
+
   res.end();
 });
 
