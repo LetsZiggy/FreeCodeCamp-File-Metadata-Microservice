@@ -86,9 +86,11 @@ let listener = server.listen(process.env.PORT, () => {
   console.log('Your app is listening on port ' + listener.address().port);
 });
 
-/*
-** Attempt to remove Formidable package dependency
-** Manually writing file not working - wrong file size
+
+
+/**
+*** Manually writing file not working - wrong file size
+***
 
 let body = '';
 let fileName = null;
@@ -112,4 +114,6 @@ req.on('end', () => {
   });
   res.end();
 });
-*/
+
+***
+**/
