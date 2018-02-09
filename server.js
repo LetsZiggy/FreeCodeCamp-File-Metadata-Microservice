@@ -4,7 +4,7 @@
 ***    Remove file after getting file size ---> https://stackoverflow.com/a/5315175/7641789
 ***    Handle file upload and creation ---> http://shiya.io/simple-file-upload-with-express-js-and-formidable-in-node-js/
 **/
-
+console.log('test')
 const http = require('http');
 const fs = require('fs');
 const formidable = require('formidable');
