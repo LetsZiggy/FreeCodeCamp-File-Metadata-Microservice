@@ -1,2 +1,2 @@
-# FreeCodeCamp - API Projects - File Metadata Microservice
-**Using http, fs, [formidable](https://www.npmjs.com/package/formidable)**
+# [FreeCodeCamp](https://www.freecodecamp.org/map) - API Projects - [File Metadata Microservice](https://www.freecodecamp.org/challenges/file-metadata-microservice)
+**Using [http](https://nodejs.org/api/http.html), [fs](https://nodejs.org/api/fs.html) and [formidable](https://github.com/felixge/node-formidable)**
